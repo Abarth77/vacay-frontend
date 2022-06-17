@@ -4,8 +4,6 @@ COPY . /var/www/frontend
 
 WORKDIR /var/www/frontend
 
-ENV NODE_ENV=development
-
 RUN npm install
 
 CMD [ "npm", "run", "serve" ]

@@ -15,14 +15,6 @@ export default class Backend {
     }
 
     async getData(endpoint) {
-        console.log({
-            method: 'GET',
-            ...this.defaultBody,
-            headers: {
-                ...this.defaultHeader
-            }
-        });
-
         return await fetch(`${this.apiGateWay}/${endpoint}`, {
             method: 'GET',
             ...this.defaultBody,
