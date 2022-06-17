@@ -1,19 +1,15 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld :msg="data"/>
+    <h1 class="text-3xl font-bold underline">Tailwindcss works.</h1>
+    <p>API works: {{data}}</p>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import Backend from './utility/Backend.js'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  },
 
   data() {
     return {
