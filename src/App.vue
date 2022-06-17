@@ -1,17 +1,41 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld :msg="data"/>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import Backend from './utility/Backend.js'
 
 export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+
+  data() {
+    return {
+      data: null
+    }
+  },
+
+  mounted() {
+    this.init();
+  },
+
+  methods: {
+    async init() {
+      // An attempt at making use of the fetch() API a bit more smooth,
+      // and cut out packes that are not needed, in this case Axios
+      const backend = new Backend();
+
+      // Proof of concept, remove
+      const EndpointFn = "myFunctionName";
+      const response = await backend.getData(EndpointFn);
+      this.data = response;
+    }
   }
 }
 </script>
